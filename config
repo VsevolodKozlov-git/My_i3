@@ -65,10 +65,10 @@ bindsym $mod+d exec "dmenu_run -nf '#BBBBBB' -nb '#29383E' -sb '#217769' -sf '#E
 
 
 # change focus
-bindsym $mod+j focus left
-bindsym $mod+k focus down
-bindsym $mod+l focus up
-bindsym $mod+semicolon focus right
+bindsym $mod+h focus left
+bindsym $mod+j focus down
+bindsym $mod+k focus up
+bindsym $mod+l focus right
 
 # alternatively, you can use the cursor keys:
 bindsym $mod+Left focus left
@@ -77,10 +77,10 @@ bindsym $mod+Up focus up
 bindsym $mod+Right focus right
 
 # move focused window
-bindsym $mod+Shift+j move left
-bindsym $mod+Shift+k move down
-bindsym $mod+Shift+l move up
-bindsym $mod+Shift+semicolon move right
+bindsym $mod+Shift+h move left
+bindsym $mod+Shift+j move down
+bindsym $mod+Shift+k move up
+bindsym $mod+Shift+l move right
 
 # alternatively, you can use the cursor keys:
 bindsym $mod+Shift+Left move left
@@ -89,10 +89,10 @@ bindsym $mod+Shift+Up move up
 bindsym $mod+Shift+Right move right
 
 # split in horizontal orientation
-bindsym $mod+h split h
+# bindsym $mod+h split h
 
 # split in vertical orientation
-bindsym $mod+v split v
+# bindsym $mod+v split v
 
 # enter fullscreen mode for the focused container
 bindsym $mod+f fullscreen toggle
@@ -165,6 +165,12 @@ bindsym $mod+$alt+Down resize grow height 2 px or 2 ppt
 bindsym $mod+$alt+Up resize shrink height 2 px or 2 ppt
 bindsym $mod+$alt+Right resize grow width 2 px or 2 ppt
 
+bindsym $mod+$alt+h resize shrink width 2 px or 2 ppt
+bindsym $mod+$alt+j resize grow height 2 px or 2 ppt
+bindsym $mod+$alt+k resize shrink height 2 px or 2 ppt
+bindsym $mod+$alt+l resize grow width 2 px or 2 ppt
+
+
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 bar {
@@ -195,8 +201,8 @@ exec ~/Documents/i3/tile.py
 
 
 #wallpaper
-exec --no-startup-id feh --bg-fill --randomize ~/Pictures/wallpapers/*
-exec picom --config ~/.config/picom.conf
+exec --no-startup-id feh --bg-fill --randomize ~/Pictures/wallpapers/current
+exec picom --config ~/.config/picom.conf -b
 
 
 #############################
@@ -236,7 +242,7 @@ mode "$mode_gaps_inner" {
         bindsym minus gaps inner current minus 5
         bindsym 0     gaps inner current set 0
  
-        bindsym Shift+plus  gaps inner all plus 5
+        
         bindsym Shift+minus gaps inner all minus 5
         bindsym Shift+0     gaps inner all set 0
  
@@ -278,4 +284,5 @@ bar {
     urgent_workspace   #84142D #84142D #FFFFFF
     binding_mode       #84142D #84142D #FFFFFF
   }
+
 
